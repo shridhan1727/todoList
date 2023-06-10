@@ -1,0 +1,13 @@
+.task-completed-strike {
+  text-decoration: line-through !important;
+}
+
+
+
+.task-completed {
+  color: green;
+}
+
+.task-incompleted {
+  color: red;
+}

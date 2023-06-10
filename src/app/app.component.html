@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="">
+    <div class="col-12">
+      <h1 class="text-danger text-center">TO-DO List</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of taskList">
+            <th>{{task.id}}</th>
+            <td [ngClass]="{'task-completed-strike': task.completed}">{{task.title}}</td>
+            <td [ngClass]="{'task-completed': task.completed, 'task-incompleted': !task.completed}">{{task.completed ?
+              'Completed' : 'In Complete'}}</td>
+            <td class="text-center">
+              <input type="checkbox" (change)="updateStatus(task, $event)" value="{{task.completed}}"
+                [checked]="task.completed">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
